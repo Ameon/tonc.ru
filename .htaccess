@@ -1,0 +1,46 @@
+<IfModule mod_php5.c>
+  php_flag session.use_trans_sid off
+  #php_value display_errors 1
+  #php_value mbstring.internal_encoding UTF-8
+  php_value opcache.revalidate_freq 0
+</IfModule>
+
+<IfModule mod_php7.c>
+  php_flag session.use_trans_sid off
+  #php_value display_errors 1
+  #php_value mbstring.internal_encoding UTF-8
+  php_value opcache.revalidate_freq 0
+</IfModule>
+
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Protocol} !=https
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+Deny from 95.85.17.201
+Deny from 109.206.188.63 
+Deny from 136.243.2.204
+
+Options -Indexes
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{HTTP_HOST} (.*)
+RewriteCond %{REQUEST_URI} index.php$
+RewriteRule ^(.*)(/)$ $1 [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L,QSA]
+DirectoryIndex index.php
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?id=$1 [L,QSA]
+
+
+AddDefaultCharset UTF-8
+ErrorDocument 404 /err/error404.php
+ErrorDocument 403 /err/403.php

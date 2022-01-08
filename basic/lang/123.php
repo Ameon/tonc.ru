@@ -1,0 +1,1 @@
+<? $MESS['AAA']="sdfsdfssssssssssss";?>
