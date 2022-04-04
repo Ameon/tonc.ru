@@ -1,10 +1,10 @@
 <?php 
-return array(	'host' => 'localhost',
-	'db' => 'ameon_poisk',
-	'user' => '046813084_poisk',
-	'pass' => '123456',
+return array(	
+	'host' => 'localhost',
+	'db' => 'tonc_ru',
+	'user' => 'ameon',
+	'pass' => '12345678',
 	'charset' => 'utf8'
-
 );
 
 ?>

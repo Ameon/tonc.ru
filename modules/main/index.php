@@ -2,15 +2,20 @@
 ?>
 <?if(session_id() == '') {session_start();}?>
 <div id="search-box">
+				
 				<div style="height:85px;box-shadow: 0 1px rgba(0,0,0,.1);">
+					
 					<div class="search-l" id="header_search" style="margin:0 auto;">
 						<div>
 							<form action="/poisk/" method="get" id="send_poisk">
 								<div class="input-group">
+									<a href='/'>
+										<img width='70px' src='/img/tonc.png' style='position:absolute;left:-130px;top:0'>
+									</a>
 									<input id="search_input" class="search" type="search"  name="srchpat[0]" value="а" autocomplete="off" placeholder="Умный поиск">
-									<span class="input-group-btn">
+									<div class="input-group-btn">
 										<button id="search_btn">Найти</button>
-									</span>
+									</div>
 								</div>
 							</form>
 						</div>
@@ -18,9 +23,15 @@
 						
 					</div>
 					<div id="header_services">
-							<div style='display: inline-block;'>Поиск</div>
-							<div style='display: inline-block;'>Картинки</div>
-							<div style='display: inline-block;'>Видео</div>
+							<div class='item'>
+								<a href='/?s' class='select'>Поиск</a>
+							</div>
+							<div class='item'>
+								<a href='/?p'>Картинки</a>
+							</div>
+							<div class='item'>
+								<a href='/?v'>Видео</a>
+							</div>
 					</div>
 				</div>
 				
@@ -40,10 +51,10 @@
 									background-position:0 0px;
 									background-image:url(https://picht.ru/img/osn_logo.png);"></div>
 								</div>
-								<div>
+								<div class='title_wrap'>
 									<a target="_blank" href="<?=$row['link'];?>"><?=$row['title'];?></a>
 								</div>
-								<span class="url"><?=$row['link'];?></span>
+								<div class="url"><?=$row['link'];?></div>
 								<div style="">EXDU – сайт новых возможностей, постоянное стремление к лучшему Только тебе решать что тебе нужно!</div>
 							</div>
 									
