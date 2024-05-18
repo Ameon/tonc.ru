@@ -1,10 +1,8 @@
-<?php 
-return array(	
-	'host' => 'localhost',
-	'db' => 'tonc_ru',
-	'user' => 'ameon',
-	'pass' => '12345678',
-	'charset' => 'utf8'
+<?php
+return array(
+  'host' => 'localhost',
+  'db' => 'ameon_tonc',
+  'user' => '046813084_tonc',
+  'pass' => 'fhabv5gJ-cde',
+  'charset' => 'utf8'
 );
-
-?>
